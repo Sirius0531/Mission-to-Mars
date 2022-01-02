@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Mission to Mars</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Add Jumbotron to Header -->
+      <div class="jumbotron text-center" style="background-image: url(https://static8.depositphotos.com/1302980/983/v/380/depositphotos_9830427-stock-illustration-spaceship-on-martian-landscape.jpg?forcejpeg=true);">
+        <h1>Mission to Mars</h1>
+        <!-- Add a button to activate scraping script -->
+        <p><a class="btn btn-primary btn-lg" style="background-color: #EF4D08; border: 25px;" href="/scrape" role="button">What's New?</a></p>
+      </div>
+
+      <!-- Add section for Mars News -->
+      <div class="container-fluid"> 
+        <div class="row" style="background-color: #FFDDCD;">
+      
+          <div class="col-md-6" style="padding: 5%;">
+            <h2>Latest Mars News:</h2>
+            <h3>{{ mars.news_title }}</h3>
+            <p>{{ mars.news_paragraph }}</p>
+          </div>
+      
+          <div class="col-md-6 text-center">
+            <img src="data:image/jpeg;base64,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" style="width: 200px; height: 200px;">
+          </div>
+      
+        </div>
+      </div>
+
+      <!-- Section for Featured Image and Facts table -->
+      <div class="row" id="mars-featured-image">
+        <div class="col-md-6">
+          <h2>Featured Mars Image</h2>
+
+          <!-- if images is False/None/non-existent, then default to error message -->
+          <img 
+            src="{{mars.featured_image | default('static/images/error.png', true) }}"
+            class="img-responsive"
+            alt="Responsive image"
+            width="300" height="300"
+          />
+        </div>
+
+        <div class="container">
+          <div class="row" style="background-color: #FF9E76;">
+            <div class="col-md-6">
+              <div class="row" id="mars-facts">
+                <h4>Mars Facts</h4>
+                <table class="table table-striped">{{mars.facts | safe }}</table> 
+                <img src="https://media.istockphoto.com/vectors/the-planet-mars-vector-illustration-vector-id522334534?k=20&m=522334534&s=170667a&w=0&h=KzeCNOqjx6bdnANSke2NdiptqPqXtCwbaT0r6httbrQ=" width="200" height="200" style="vertical-align:middle;margin:50px 0px">
+               </div>  
+            </div>
+          </div>           
+    
+        </div>
+
+      <!-- Section for Mars Hemispheres -->
+      
+      <div class="row" id="mars-hemispheres">
+        <div class="page-header">
+          <h2 class="text-center">Mars Hemispheres</h2>
+        </div>
+
+        {% for hemisphere in mars.hemispheres %}
+        <div class="col-md-3">
+          <div class="thumbnail">
+            <img src="{{hemisphere.img_url | default('static/images/error.png', true)}}" alt="...">
+            <div class="caption">
+              <h3>{{hemisphere.title}}</h3>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </body>
+</html>
